@@ -63,31 +63,10 @@ def home():
 @app.route('/inicio')
 def index(): 
 
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM habilidades')
 
-    habilidades = [{
-        'nombre':'Html',
-        'habilidad':'Conozco elementos basicos de html, puedo diseñar la estructura de una paguina web siguendo las competencias requeridas para la misma. Tengo el conocimineto suficiente para formar su estructura textual y complementar con audios y videos.'
-    },
-    {
-        'nombre':'Css',
-        'habilidad':'Conozco elementos basicos de html, puedo diseñar la estructura de una paguina web siguendo las competencias requeridas para la misma. Tengo el conocimineto suficiente para formar su estructura textual y complementar con audios y videos.'
-    },
-    {
-        'nombre':'Python',
-        'habilidad':'Conozco elementos basicos de html, puedo diseñar la estructura de una paguina web siguendo las competencias requeridas para la misma. Tengo el conocimineto suficiente para formar su estructura textual y complementar con audios y videos.' 
-    },
-    {
-        'nombre':'Flask',
-        'habilidad':'Conozco elementos basicos de html, puedo diseñar la estructura de una paguina web siguendo las competencias requeridas para la misma. Tengo el conocimineto suficiente para formar su estructura textual y complementar con audios y videos.'
-    },
-    {
-        'nombre':'MySQL',
-        'habilidad':'Conozco elementos basicos de html, puedo diseñar la estructura de una paguina web siguendo las competencias requeridas para la misma. Tengo el conocimineto suficiente para formar su estructura textual y complementar con audios y videos.'
-    },
-    {
-        'nombre':'Git',
-        'habilidad':'Conozco elementos basicos de html, puedo diseñar la estructura de una paguina web siguendo las competencias requeridas para la misma. Tengo el conocimineto suficiente para formar su estructura textual y complementar con audios y videos.' 
-    }]
+    habilidades = cur.fetchall()
 
     return render_template('index.html', habilidades=habilidades, index=True)
 
@@ -119,7 +98,12 @@ def contacto():
 
 @app.route('/acerca')
 def acerca():
-    return render_template('acerca.html', acerca=True)
+    cur = mysql.connection.cursor()
+    perfil = cur.execute('SELECT * FROM acerca_de_mi')
+    perfil = cur.fetchall()
+
+
+    return render_template('acerca.html', perfil=perfil,  acerca=True)
 
 @app.route('/proyectos')
 def proyectos():    

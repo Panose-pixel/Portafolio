@@ -25,14 +25,12 @@
         </div>
     </div>
     <main class="contenedor_acerca">
+        {%for acerca in perfil%}
         <section>
-            <h2>Perfil Profesional</h2>
-            <p>soy estudiante técnico del SENA en programación de software y también estoy haciendo un técnico de inglés como legua extrangera. Estoy cursando grado 11 y espero ingresar a una carrera universitaria en ingeniería de sistemas. Planeo en un futuro no muy lejano desarrollar mi proyecto de vida como un profesional en el area de sistemas e informática.</p> <!--RECORDATORIO  COLOCAR TEXTO-->
+            <h2> {{ acerca.titulo }} </h2>
+            <p>{{ acerca.contenido }}</p> <!--RECORDATORIO  COLOCAR TEXTO-->
         </section>
-        <section>
-            <h2>Hobbies Y Pasatiempos</h2>
-            <p>disfruto de  jugar fútbol, estudiar ejercicios de lógica matemática y precálculo, soy apasionado por entender cómo funcionan la cosas y me gustan las series de ciencia ficción, psicología y ciencia.</p> <!--RECORDATORIO  COLOCAR TEXTO-->
-        </section>
+        {% endfor %}
     </main>
 
 
