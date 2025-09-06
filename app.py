@@ -60,6 +60,43 @@ def home():
     return render_template('home.html', contactos=contactos)
 
 
+@app.route('/home/insertar', methods=['GET','POST'])
+def insertar():
+    cur = mysql.connection.cursor()
+    if request.method == 'POST':
+
+        try:
+            #peticion de habilidades
+            nombre = request.form.get('nombre')
+            imagen = request.form.get('imagen')
+            contenido = request.form.get('contenido')
+        except ValueError:
+            print('valores no existen')
+        
+        try:
+            #petición de perfil
+            nombre_actividad = request.form.get('nombre_actividad')
+            contenido_actividad = request.form.get('contenido_actividad')
+        except ValueError:
+            print('valores de perfil no existen')
+
+
+
+        if nombre and imagen and contenido:
+            cur.execute('INSERT INTO portafolio.habilidades (titulo_habilidad,icono_habilidad,habilidad) VALUES (%s,%s,%s)', (nombre,imagen,contenido))
+            mysql.connection.commit()
+            return redirect(url_for('home'))
+        
+
+        if nombre_actividad and contenido_actividad:
+            cur.execute('INSERT INTO portafolio.acerca_de_mi (titulo, contenido) VALUES (%s,%s)', (nombre_actividad, contenido_actividad))
+            mysql.connection.commit()
+            return redirect(url_for('home'))
+
+
+    return render_template('insertar.html')
+
+
 @app.route('/inicio')
 def index(): 
 

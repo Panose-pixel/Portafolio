@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/insertar.css">
+    <title>Insertar valores</title>
+</head>
+<body>
+    <div class="encabezado">
+      <a href="/home">&lsaquo;</a>
+    </div>
+
+    <h1>Inserta nuevos campos a tu portafolio:</h1>
+    <div class="contenedor_principal">
+        <section class="contenedor_insertar">
+            <form method='POST'>
+                <h2>Inserta una nueva habilidad</h2>
+                <label for="nombre">Nombre de la habilidad</label><br><br>
+                <input type="text" placeholder="Nombre" name="nombre"><br><br>
+
+                <label for="imagen svg">Imagen</label><br><br>
+                <textarea type="text" placeholder="Imagen en formato svg" name="imagen"></textarea><br><br>
+
+                <label for="contenido">Contenido</label><br><br>
+                <textarea type="text" placeholder="Contenido" name="contenido"></textarea><br><br>
+
+                <button type="submit">Insertar</button>
+            </form>
+        </section>
+
+        <section class="contenedor_insertar">
+            <form method='POST'>
+                <h2>Inserta un nuevo campo acerca de mi</h2>
+                <label for="nombre">nombre del hobbie o actividad</label><br><br>
+                <input type="text" placeholder="Nombre" name="nombre_actividad"><br><br>
+
+                <label for="imagen svg">Descripción</label><br><br>
+                <textarea type="text" placeholder="¿De qué trata?" name="contenido_actividad"></textarea><br><br>
+                <button type="submit">Insertar</button>
+            </form>
+        </section>
+
+    </div>
+</body>
+</html>
