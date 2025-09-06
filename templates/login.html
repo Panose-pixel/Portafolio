@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="encabezado">
+      <a href="/">&lsaquo;</a>
+    </div>
+    <main>
+      <div class="registro-container">
+
+        <h2>Iniciar Sesión</h2>
+        {% if mensaje %}
+            <h2>{{ mensaje }}</h2>
+        {% endif %}
+      
+        <form action="/login" method="POST">
+          <label for="Usuario">Ingrese su Usuario</label>
+          <input type="text" name="txtusername" placeholder="Usuario"> <!--El placeholder es el texto que aparece dentro del input-->
+
+          <label for="Contraseña">Ingrese su Contraseña</label>
+          <input type="password" name="txtpassword" placeholder="Contraseña">
+
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+
+      </div>
+    </main>
+  
+    <div clas="footer-container">
+      <footer>
+        <p>Todos los derechos reservados.</p>
+        <p>Desarrollado por Juanangel Alvarado</p>
+      </footer>
+    </div>
+</body>
+</html>

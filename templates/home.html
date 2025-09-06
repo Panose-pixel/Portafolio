@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/administracion.css">
+    <title>Administración</title>
+</head>
+<body>
+    <div class="encabezado">
+      <a href="/login">&lsaquo;</a>
+      <h1>Bienvenido, Juanangel</h1>
+    </div>
+
+    <h2>Quiénes me han contactado:</h2>
+
+    {% for contacto in contactos %}
+
+          <div class="comentario">
+
+            <div class="cuadro">
+              <label>Nombre</label>
+              <p></p><strong>{{ contacto.nombre }}</strong></p>
+            </div>
+            <div class="cuadro">
+              <label>Correo Electrónico</label>
+              <p>{{ contacto.email }}</p>
+            </div>
+            <div class="cuadro">
+              <label>Número de Teléfono</label>
+              <a href="https://wa.me/57{{contacto.telefono }}" class="numero_telefonico"><p>{{ contacto.telefono }}</p></a>
+            </div>
+            <div class="cuadro">
+              <label>Mensaje</label>
+              <p>{{ contacto.mensaje }}</p>
+            </div>
+          </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block  title%}Inicio{% endblock %}
+{% block content %}
+
+    <div class="fondo_header">
+
+
+        <div>
+            <header>
+                <h1 class="titulo_principal"> 
+                    Juanangel - Aprendiz del SENA y futuro ING. en sistemas
+                </h1>
+
+            </header>
+            <div class="ubicacion">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" width="72" height="72" stroke-width="1.25">
+                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                        <path d="M11.87 21.48a1.992 1.992 0 0 1 -1.283 -.58l-4.244 -4.243a8 8 0 1 1 13.355 -3.474">
+                        </path>
+                        <path d="M15 19l2 2l4 -4"></path>
+                    </svg>
+                </div>
+                <p>
+                    Saravena, Arauca
+                </p>
+            </div>
+            <div>
+                <a href="https://wa.me/573227732594"
+                    target="_blank">
+                    <button class="btn_contactar">contáctame</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <main class="contenedor_principal">
+        <h2 id="mayusculas">mis habilidades</h2>
+        <div id="contenedor_habilidades">
+            <div id="html_box">
+                <section class="habilidad">
+                    <h3>{{ habilidades[0]['nombre'] }}</h3>
+                    <div class="contenedor_icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" width="60" height="60" stroke-width="1.25">
+                            <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z"></path>
+                            <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5"></path>
+                        </svg>
+                    </div>
+                <div>
+                    <p>
+                        {{ habilidades[0]['habilidad'] }}
+                    </p>
+                </div>
+            </div>
+            </section>
+        <div id="css_box">
+            <section class="habilidad">
+                <h3>
+                    {{ habilidades[1]['nombre'] }}
+                </h3>
+                <div class="contenedor_icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" width="60" height="60" stroke-width="2">
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                        <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"></path>
+                        <path d="M8 16.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0"></path>
+                        <path
+                            d="M11 20.25c0 .414 .336 .75 .75 .75h1.25a1 1 0 0 0 1 -1v-1a1 1 0 0 0 -1 -1h-1a1 1 0 0 1 -1 -1v-1a1 1 0 0 1 1 -1h1.25a.75 .75 0 0 1 .75 .75">
+                        </path>
+                        <path
+                            d="M17 20.25c0 .414 .336 .75 .75 .75h1.25a1 1 0 0 0 1 -1v-1a1 1 0 0 0 -1 -1h-1a1 1 0 0 1 -1 -1v-1a1 1 0 0 1 1 -1h1.25a.75 .75 0 0 1 .75 .75">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <p>
+                        {{ habilidades[1]['habilidad'] }}
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div id="python_box">
+            <section class="habilidad">
+                <h3>
+                    {{ habilidades[2]['nombre'] }}
+                </h3>
+                <div class="contenedor_icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" width="60" height="60" stroke-width="2">
+                        <path d="M12 9h-7a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h3"></path>
+                        <path d="M12 15h7a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-3"></path>
+                        <path
+                            d="M8 9v-4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-4a2 2 0 0 0 -2 2v5a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-4">
+                        </path>
+                        <path d="M11 6l0 .01"></path>
+                        <path d="M13 18l0 .01"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p>
+                        {{ habilidades[2]['habilidad'] }}
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
