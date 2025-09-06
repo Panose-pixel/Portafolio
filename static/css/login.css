@@ -29,7 +29,7 @@ h3 a{
 
 
 .registro-container {
-  background-color: rgb(133, 112, 54);
+  background-color: rgba(10, 20, 40, 0.6);
   max-width: 400px;
   margin: 3rem auto;
   padding: 2rem;
@@ -91,7 +91,7 @@ footer{
 
 .encabezado{
  display: flex;
- background-color: rgb(133, 112, 54);
+ background-color: rgba(10, 20, 40, 0.6);
  padding: 0.1rem;
  font-size: small;
  
