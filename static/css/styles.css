@@ -18,6 +18,14 @@ color: black;
   text-align: center;
   margin-top: 80px;
 }
+
+.titulo_acerca{
+  font-family: "EB Garamond, serif;";
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
  
 .btnMenu{
   display: none;
@@ -165,7 +173,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 /* Estilos mejorados para el contenedor de contacto */
 .seccion_contacto {
   padding: 60px 20px;
-  background-color: rgba(37, 75, 63, 0.9);
+  background-color: rgba(10, 20, 40, 0.6);
   color: #f1f1c8;
   border-radius: 16px;
   max-width: 70%;
@@ -347,6 +355,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .pie_pag{
     margin: 0 auto;
+    margin-top: 2.5rem;
     border-radius: 6px;
       box-shadow:
       0 0 10px rgba(0, 0, 255, 0.7),
@@ -361,7 +370,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   gap: 40px;
   border-color: white;
-  background-image: url(/static/img/espacio.jpg); /* Fondo imagen */
+  background-image: url(/static/img/fondo\ azul.jpeg); /* Fondo imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -369,7 +378,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .proyectos{
   font-family: "EB Garamond, serif;";
-  color: rgb(212, 173, 94);
+  color: white;
   height: 300px;
   width: 150x;
   background-color: rgb(0, 0, 0);
@@ -381,6 +390,10 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   justify-content: center;
   transition: all 0.3s ease-in-out;
   border: 2px solid transparent;
+  box-shadow:
+    0 0 10px rgba(0, 0, 255, 0.7),
+    0 0 20px rgba(0, 0, 255, 0.5),
+    0 0 40px rgba(0, 0, 255, 0.3);
 }
 .proyectos a{
   &:hover{

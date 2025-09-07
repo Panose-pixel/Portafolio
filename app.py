@@ -1,7 +1,8 @@
 import pymysql
 pymysql.install_as_MySQLdb()
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_mysqldb import MySQL
+from functools import wraps
 
 
 
@@ -19,17 +20,29 @@ app.config['MYSQL_CURSORCLASS']='DictCursor'
 mysql=MySQL(app)
 
 
+def login_requerido(f):
+    @wraps(f)
+    def decorada(*args, **kwargs):
+        if not session.get('logueado'):
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorada
+
+
+
+
 @app.route('/')
 def entrada():
-    return render_template('entrada.html')
+    entrar_login = url_for('login')
+    return render_template('entrada.html', entrar_login=entrar_login)
+
+
 
 @app.route('/login', methods=['GET','POST'])
 def login():
-
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM portafolio.admin')
     tabla = cur.fetchall()
-    print(tabla)
     tabla = tabla[0]
 
     print(tabla)
@@ -39,6 +52,8 @@ def login():
         usuario = str(request.form['txtusername'].capitalize())
         contraseña = str(request.form['txtpassword'])
         if usuario in tabla['usuario'] and contraseña in tabla['password']:
+
+            session['logueado'] = True #Si la sesión está bien se guardará como True
             return redirect(url_for('home'))
         else:
             mensaje='El usuario o contraseña ingresada es incorrecta'
@@ -48,7 +63,9 @@ def login():
     return render_template('login.html')
 
 @app.route('/home')
+@login_requerido
 def home():
+
     cur = mysql.connection.cursor()
     print(cur.execute('''
         SELECT nombre, email, telefono, mensaje
@@ -61,6 +78,7 @@ def home():
 
 
 @app.route('/home/insertar', methods=['GET','POST'])
+@login_requerido
 def insertar():
     cur = mysql.connection.cursor()
     if request.method == 'POST':

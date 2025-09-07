@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="encabezado">
-      <a href="/login">&lsaquo;</a>
+      <a class="flecha" href="/login">&lsaquo;</a>
       <h1>Bienvenido, Juanangel</h1>
-      <a href="/home/insertar" style=" margin: auto auto;"><h2 class="insertar">Insertar</h2></a>
+      <a href="/home/insertar" style="color:black;font-size: 1.7rem; font-weight: bold; margin: auto; margin-left: 60rem; text-decoration: none; &:hover{text-decoration: underline;}">Insertar</a>
     </div>
 
     <h2>Quiénes me han contactado:</h2>
@@ -29,7 +29,7 @@
             </div>
             <div class="cuadro">
               <label>Número de Teléfono</label>
-              <a href="https://wa.me/57{{contacto.telefono }}" class="numero_telefonico"><p>{{ contacto.telefono }}</p></a>
+              <a href="https://wa.me/57{{contacto.telefono}}" class="numero_telefonico"><p>{{ contacto.telefono }}</p></a>
             </div>
             <div class="cuadro">
               <label>Mensaje</label>

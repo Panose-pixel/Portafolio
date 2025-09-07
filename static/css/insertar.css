@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background-image: url(/static/img/agujero_negro.webp);
+    background-image: url(/static/img/descargar.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -81,22 +81,24 @@ h1{
 }
 
 form{
+    max-height: rem;
     text-align: center;
     background-color: rgba(10, 20, 40, 0.7);
     padding: 1rem;
     border-radius: 12px;
     border: solid 1px white;
-      box-shadow:
-        0 0 5px rgba(0, 0, 255, 0.7),
-        0 0 10px rgba(0, 0, 255, 0.5),
-        0 0 20px rgba(0, 0, 255, 0.3);
+    box-shadow:
+    0 0 5px rgba(0, 0, 255, 0.7),
+    0 0 10px rgba(0, 0, 255, 0.5),
+    0 0 20px rgba(0, 0, 255, 0.3);
 }
 
 form input, textarea{
     border: none;
     border-radius: 6px;
-    padding: 0.4rem;
-    padding-right: 14rem;
+    width: 0.4rem;
+    padding: 1rem;
+    width: 19rem;
 }
 
 form button{
@@ -104,7 +106,7 @@ form button{
     border: none;
     border-radius: 12px;
     padding: 0.4rem;
-    padding-inline: 11rem;
+    padding-inline: 9rem;
     &:hover{
         background-color: rgb(198, 195, 195);
         color: black;
